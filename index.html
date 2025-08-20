@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Irrigation AI Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="./app.css" />
+</head>
+<body>
+  <header>
+    <h1>🌱 Irrigation Dashboard</h1>
+    <div id="api-status">connecting…</div>
+  </header>
+
+  <main>
+    <section class="cards">
+      <div class="card">
+        <h3>Soil Moisture</h3>
+        <div class="value" id="soil">--%</div>
+      </div>
+      <div class="card">
+        <h3>Temperature</h3>
+        <div class="value" id="temp">--°C</div>
+      </div>
+      <div class="card">
+        <h3>Humidity</h3>
+        <div class="value" id="humidity">--%</div>
+      </div>
+      <div class="card">
+        <h3>Pump</h3>
+        <div class="value" id="pump">--</div>
+        <div class="row">
+          <button id="btn-on">Water Now</button>
+          <button id="btn-off">Stop</button>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Settings</h3>
+        <label>Threshold (%)
+          <input type="number" id="threshold" min="0" max="100" />
+        </label>
+        <label>Water Duration (sec)
+          <input type="number" id="duration" min="1" max="600" />
+        </label>
+        <label>Cooldown (min)
+          <input type="number" id="cooldown" min="0" max="240" />
+        </label>
+        <label>Quiet Hours (HH-HH)
+          <input type="text" id="quiet" placeholder="22-06" />
+        </label>
+        <button id="save-config">Save</button>
+      </div>
+    </section>
+
+    <section class="chat">
+      <h2>Chatbot</h2>
+      <div id="chat-log"></div>
+      <div class="chat-input">
+        <input id="chat-text" placeholder="Ask: status, water now, set threshold to 35%..." />
+        <button id="chat-send">Send</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>Built for ESP8266 irrigation • v1.0</footer>
+  <script src="./app.js"></script>
+</body>
+</html>
