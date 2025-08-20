@@ -1,6 +1,6 @@
 // === CONFIG ===
 const API_BASE = "https://irrigation-ai-backend.onrender.com"; // change this
-const API_KEY = "super-secret-key";                    // same as backend
+const API_KEY = "N8pX3z!s9rQ#7yL2@hB5";                   // same as backend
 
 function headers() {
   return { "Content-Type":"application/json", "X-API-Key": API_KEY };
